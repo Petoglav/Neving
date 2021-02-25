@@ -60,7 +60,7 @@ $(window).scroll(function() {
         $(window).off("scroll");
         $('.broj').each(function () {
             var $this = $(this);
-            jQuery({ Counter: $this.attr("data-decimal") }).animate({ Counter: $this.attr("data-number") }, {
+            jQuery({ Counter:+ $this.attr("data-decimal") }).animate({ Counter: $this.attr("data-number") }, {
                 duration: 4000,
                 easing: 'swing',
                 step: function () {
