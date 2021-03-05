@@ -34,10 +34,6 @@ a:hover{
     transition: all .3s ease-in-out;
     color: var(--red);
 }
-.bg_crevena{ background-color: #f04e23; color: #f2f2f2;}
-.b_crevena{ color: #f04e23;}
-.b_bijela{ color: #f2f2f2;}
-.bold{ font-weight: 700; }
 #tButton{
     display: none;
     position: fixed;
@@ -50,7 +46,7 @@ a:hover{
     background-color: rgba(72,144,196,1);
     color: white;
     cursor: pointer;
-    padding: 15px;
+    padding: 12px;
     border-radius: 4px;
 }
 #tButton:hover {
@@ -76,6 +72,8 @@ h2{
 }
 /* FOOTER */
 footer{
+
+    line-height: 30px;    
     background-color: #0072c6;
     height: auto;
     bottom:0;
@@ -88,7 +86,6 @@ footer{
     color: rgba(255,255,255,.7);
 }
 .footer_bottom{
-    color: rgba(255,255,255,.7);
     border-top: 1px solid;
     border-top-color: currentcolor;
     border-color: #3782b3;
@@ -374,17 +371,7 @@ nav.active, .tamno-plava-bg{
     padding-right: 15px;
     padding-left: 15px;
 }
-.container{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.table{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.projects, .art{
+.nekretnine{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -400,6 +387,20 @@ nav.active, .tamno-plava-bg{
     width:auto;
     padding: 0 110px 44px 110px;
 }
+.naslov{
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width:auto;
+    padding: 0 110px 0 110px;
+}
+.naslov.big{
+    padding: 0;
+    font-size: 32px;
+    width:auto;
+    margin-right: auto;
+}
 .colum{
     display: flex;
     justify-content: center;
@@ -410,14 +411,20 @@ nav.active, .tamno-plava-bg{
     padding: 10px;
     max-width: 200px;
 }
-.col{
-    flex: 35%;
+.klijent{
+    border: 1px solid #eee;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    flex: 75%;
+    justify-content: space-between;
     padding: 10px;
-}
-section:nth-child(odd){
-    background-color: #f4f8fa;
+    max-width: 300px;
+    text-align: center;
 }
 section:nth-child(even){
+    background-color: #f4f8fa;
+}
+section:nth-child(odd){
     background-color: #fff;
 }
 .crtica{
@@ -457,19 +464,27 @@ section:nth-child(even){
     border-bottom: 2px solid #f04e23;
 }
 .map>iframe{
-    top: 90px;
     position:relative;
 }
 .head>.naslov_slike {
     color: #f2f2f2;
     z-index: 1;
-margin: .67em 0;
+    width: auto;
+    padding-left: 35px;
     position: absolute;
-text-align: center;
-    top: 20%;
-    left: 35%;
+    text-align: center;
+    margin-top: 80px;
     font-size: 32px;
     font-weight: 800;
+}
+ul{
+    list-style: inside none none;
+}
+ul.lista li::before{
+    content: "▹";
+    left: 0px;
+    color: var(--red);
+    line-height: 12px;
 }
 .button_back::before {
     content: "↪";
@@ -549,6 +564,71 @@ position: relative;
 .fadeInDown{
     animation: fadeInDown 1.1s;
 
+}
+/* MODAL */
+#myImg{
+    cursor: zoom-in;
+    transition: 0.3s;
+    margin: 5px;
+    box-shadow: 5px 10px 30px -15px var(--navy-shadow);
+}
+#myImg:hover,#logo:hover{
+    opacity: 0.5;
+}
+.modal{
+    display: none; 
+    position: fixed; 
+    z-index: 3; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+.modal-content{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    height: auto;
+}
+.modal-content, #caption{  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@keyframes zoom{
+    from {
+        transform: scale(0.1)
+    } 
+    to {
+        transform: scale(1)
+    }
+}
+.close{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,.close:focus{
+    color: var(--green);
+    text-decoration: none;
+    cursor: pointer;
 }
 @keyframes fade {
     from {opacity: .5;} 
@@ -637,8 +717,15 @@ margin-top: 0px;
         font-size: 13px;
     }
 }
+.bg_crevena{ background-color: #f04e23; color: #f2f2f2;}
+.b_crevena{ color: #f04e23;}
+.b_bijela{ color: #f2f2f2;}
+.b_plava{ color: var(--blue);}
+.bold{ font-weight: 700; }
 :root{
     --Navy: #1b3a6a;
     --font_Robo:'Roboto','sans-serif';
     --red: #f04e23;
+    --dred: #d42220;
+    --blue: #0066ab;
 }
