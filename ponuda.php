@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="stil.css">
-    <title>Kontakt | NEVING</title>
+    <title>Ponuda | NEVING</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -13,9 +14,9 @@
         <div class="navigacija">
             <a href="index.html" id="logo" style="float: left;">NEVING |</a>
             <div class="meni">
-                <a class="tab" href="kontakt.html">KONTAKT</a>
+                <a href="kontakt.html">KONTAKT</a>
                 <a href="nekretnine.html">NEKRETNINE</a>
-                <a href="djelatnosti.html">DJELATNOSTI</a>
+                <a class="tab" href="djelatnosti.html">DJELATNOSTI</a>
                 <div class="dropdown">
                 <button class="dropbtn">REFERENCE</button>
                     <div class="dropdown-content">
@@ -55,31 +56,51 @@
         </div>
     </nav>
     <div class="sadrzaj">
-        <section style="padding-top:90px;">
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.872636460619!2d15.973697415940912!3d45.813809079106704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6fd9be5c7c9%3A0x7a84f84418c9e9fa!2sRadi%C4%87eva%20ul.%203%2C%2010000%2C%20Zagreb!5e0!3m2!1shr!2shr!4v1614696383015!5m2!1shr!2shr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        </section>
-        <section>
+        <section style="padding-top: 90px;">
             <div class="table">
-                <div class="text-box">
-                    <p><h3><strong>Neving d.o.o.</strong></h3></p>
-                    <p><strong>HR 10000 Zagreb, Radićeva 3</strong></p>
-                    <h3>Informacije</h3>
-                    <div class="kontaktinfo">
-                        <p>Email: <a href="mailto:neving_doo@yahoo.com">neving_doo@yahoo.com</a><br></p>
-                        <p>Tel: <a href="callto:+38514580855">+385 1 4580-855</a></p>
-                        <p>OIB: 70989676533</p>
-                    </div>
-                    <br>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="table">
+            <h2 style="text-align: center; width: 100%">PONUDA</h2>
             <form name="forma" method="post" style="align: center; width: 100%;">
-                <h3>Kontakt forma</h3>
+                <h3>Forma ponude</h3>
                 <p>Unesite potrebne podatke. Naše osoblje javit će vam se u najkraćem mogućem roku.</p>
+                <br>
+                <div class="pocetak">
+                    <label for="podaci">Podaci o poslu</label>
+                    <select name="podaci">
+                        <option value="" selected="true" disabled="disabled">Izaberite vrstu posla...</option>
+                        <option value="">Nadzorni inžinjer</option>
+                        <option value="">Građevinski radovi</option>
+                        <option value="">Iskopi, mini bager</option>
+                        <option value="">Novogradnja</option>
+                        <option value="">Zemljani radovi</option>
+                        <option value="">Zidar</option>
+                        <option value="">Gipsane, knauf pliče, suha gradnja </option>
+                        <option value="">Soboslikarski radovi</option>
+                        <option value="">Zidne obloge</option>
+                        <option value="">Podne obloge</option>
+                    </select>
+                    <br>
+                    <label for="ukratko">Ukratko, što trebate</label>
+                    <input type="text" class="form-control" name="ukratko" placeholder="5 riječi" value="" required="" aria-required="true">
+                    <br>
+                    <label for="kvadratura">Kvadratura</label>
+                    <input type="text" class="form-control" name="ukratko" value="" required="" aria-required="true">
+                    <br>
+                    <label for="podaci">Kada želite početi s izvedbom?</label>
+                    <select name="podaci">
+                        <option value="Nije odabrano"  selected="true" disabled="disabled">Odaberi...</option>
+                        <option value="Odmah">Odmah</option>
+                        <option value="do 1 mjeseca">do 1 mjeseca</option>
+                        <option value="1-3 mjeseca">1-3 mjeseca</option>
+                        <option value="Više od 3 mjeseca">Više od 3 mjeseca</option>
+                        <option value="Više od 6 mjeseci">Više od 6 mjeseci</option>
+                        <option value="Zanima me samo okvirna cijena">Zanima me samo okvirna cijena</option>
+                    </select>
+                    <br>
+                    <label for="lokacija">Upišite lokaciju izvedbe radova:</label>
+                    <input type="text" class="form-control" name="lokacija" placeholder="Grad" value="" required="" aria-required="true">
+                    <button class="button bg_crevena" id="dButton">Dalje</button>
+                </div>
+                <div class="kraj" style="display: none;">
                 <br>
                 <label for="imeprezime">Ime i Prezime</label>
                 <input type="text" class="form-control" name="ime" value="" required="" aria-required="true">
@@ -96,7 +117,9 @@
                 <label for="poruka">Poruka</label>
                 <textarea name="poruka" id="" cols="30" rows="10" class="form-control" required="" aria-required="true"></textarea>
                 <br>
-                <button class="button bg_crevena" type="submit">Pošalji poruku</button>
+                <button class="button bg_crevena" id="nButton">Natrag</button>
+                <button class="button bg_crevena" type="submit" style="float: right;">Pošalji</button>
+                </div>
             </form>
             </div>
         </section>
@@ -155,5 +178,17 @@
         </footer>
     </div>
     <script src="config.js"></script>
+    <script>
+    $('#dButton').click(function() {
+        $('.kraj').show();
+        $('.pocetak').hide();
+    window.scroll({top: 0, behavior: "smooth"})
+    });
+    $('#nButton').click(function() {
+        $('.pocetak').show();
+        $('.kraj').hide();
+    window.scroll({top: 0, behavior: "smooth"})
+    });
+    </script>
 </body>
 </html>

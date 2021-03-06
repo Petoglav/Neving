@@ -23,25 +23,25 @@ function plusSlides(n){
    showSlides(slideIndex += 1); 
   }
   if (n === -1){
-    myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+    myTimer = setInterval(function(){plusSlides(n + 2)}, 3000);
   } else {
-    myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+    myTimer = setInterval(function(){plusSlides(n + 1)}, 3000);
   }
 }
 function currentSlide(n){
   clearInterval(myTimer);
-  myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  myTimer = setInterval(function(){plusSlides(n + 1)}, 3000);
   showSlides(slideIndex = n);
 }
 window.addEventListener("load",function() {
     showSlides(slideIndex);
-    myTimer = setInterval(function(){plusSlides(1)}, 4000);
+    myTimer = setInterval(function(){plusSlides(1)}, 3000);
 })
 
-$('.slideshow-container').on("mouseover",function(){
+$('.button').on("mouseover",function(){
    clearInterval(myTimer);
 });
-$('.slideshow-container').on("mouseout",function(){
+$('.button').on("mouseout",function(){
    clearInterval(myTimer);
-   myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+   myTimer = setInterval(function(){plusSlides(slideIndex)}, 3000);
 });

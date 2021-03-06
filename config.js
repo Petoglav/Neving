@@ -28,6 +28,7 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
+
 $('#tButton').click(function(){
     window.scroll({top: 0, behavior: "smooth"})
 });
